@@ -5,9 +5,9 @@ async function main() {
 
   // Deploy with constructor arguments (name and symbol)
   const mbti = await MBTI.deploy(
-    "MBTI Badge",
+    "MBTI NFT",
     "MBTI",
-    "https://mbti.storyprotocol.io/" // example tokenURI
+    "" // example tokenURI
   );
 
   await mbti.waitForDeployment();

@@ -21,11 +21,12 @@ contract MBTI is ERC721, ERC721URIStorage, Ownable {
      * @param _to address of the future owner of the token
      * @param _tokenURI URI for the token metadata
      */
-    function mintTo(address _to, string memory _tokenURI) public {
+    function mintTo(address _to, string memory _tokenURI) public returns (uint256 tokenId) {
         uint256 newTokenId = _getNextTokenId();
         _mint(_to, newTokenId);
         _setTokenURI(newTokenId, _tokenURI);
         _incrementTokenId();
+        return newTokenId;
     }
 
     /**
